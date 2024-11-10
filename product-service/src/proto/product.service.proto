@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package product;
+
+
+message ProductInfoRequest {
+    repeated string productIds = 1; 
+}
+
+message ProductListInfo{
+    string productId=1; 
+    string title=2;
+    int32 listPrice=3;
+    int32 discount=4;
+    string categoryId=5;
+    string subCategoryId=6; 
+    string brand=7;
+    string imageUrl=8;
+}
+message ProductInfoResponse {
+   repeated  ProductListInfo productList=1;
+   bool status=2;
+}
+
+
+
+service ProductService{
+    rpc GetProductInfo(ProductInfoRequest) returns (ProductInfoResponse);
+}
