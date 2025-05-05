@@ -1,0 +1,57 @@
+# Node modules
+**/node_modules/
+
+# Build output
+**/dist/
+**/build/
+**/.turbo/
+**/.next/
+**/.vite/
+
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/logs
+**/*.log
+
+# Dependency directories
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+
+# Environment variables
+**/.env
+**/.env.*.local
+**/config/*.local.json
+
+# Runtime files
+**/pids
+**/*.pid
+**/*.seed
+
+# Compiled source
+**/*.tsbuildinfo
+**/.tsbuildinfo
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Coverage reports
+**/coverage/
+**/.nyc_output/
+
+# Docker
+**/docker-compose.override.yml
+**/*.local.yml
+
+# Misc
+*.tgz
+.env.backup
+.env.sample
+.envrc

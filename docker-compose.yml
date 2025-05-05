@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  order-service:
+    build: ./order-service
+    container_name: order-service
+    ports:
+      - "3001:3000"
+    environment:
+      - CONFIG_DIR=config
+      - ENVIRONMENT=local
+    depends_on:
+      - mongo
+    networks:
+      - lilac-net
+
+  product-service:
+    build: ./product-service
+    container_name: product-service
+    ports:
+      - "3002:3000"
+    environment:
+      - CONFIG_DIR=config
+      - ENVIRONMENT=local
+    depends_on:
+      - mongo
+    networks:
+      - lilac-net
+
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    ports:
+      - "3003:3000"
+    environment:
+      - CONFIG_DIR=config
+      - ENVIRONMENT=local
+    depends_on:
+      - mongo
+    networks:
+      - lilac-net
+
+  shopping-web:
+    build: ./shopping-web
+    container_name: shopping-web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - order-service
+      - product-service
+      - user-service
+    networks:
+      - lilac-net
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - lilac-net
+
+volumes:
+  mongo-data:
+
+networks:
+  lilac-net:
+    driver: bridge
