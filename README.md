@@ -1,8 +1,8 @@
-# 🌸 Lilac – Microservices E-commerce Platform
+# Lilac – Microservices E-commerce Platform
 
 A scalable, modular e-commerce platform built with **NestJS**, **React**, and **MongoDB**, structured using a **microservices architecture**. Designed for performance, maintainability, and developer productivity.
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 lilac/
@@ -14,7 +14,7 @@ lilac/
 └── package.json         # Root scripts for multi-service control
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend (Microservices)
 - [NestJS](https://nestjs.com/)
@@ -30,7 +30,7 @@ lilac/
 ### DevOps
 - Docker & Docker Compose
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repo
 
@@ -63,24 +63,6 @@ Make sure you have [Docker](https://docs.docker.com/get-docker/) installed.
 
 ```bash
 docker-compose up --build
-```
-
-## Scripts
-
-Available in root `package.json`:
-
-| Script            | Description                          |
-|-------------------|--------------------------------------|
-| `install:all`     | Install dependencies in all services |
-| `start:all`       | Start all services concurrently      |
-| `build:all`       | Build all services for production    |
-
-## Testing
-
-Each service has its own test suite using **Jest**. Run from inside any service:
-
-```bash
-npm run test
 ```
 
 ## 📄 License
